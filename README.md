@@ -1,6 +1,6 @@
 # MERN-Ecommerce-Web-App
 
-```markdown
+
 # E-Commerce Web Application
 
 Welcome to our visually stunning and feature-rich E-Commerce Web Application built using React, SCSS, Vite, TypeScript, and the MERN stack!
