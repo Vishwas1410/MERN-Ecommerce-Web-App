@@ -27,7 +27,7 @@ const Home = () => {
       </h1>
       <main>
     </main>
-    <ProductCard productId={"632874"} photo={"https://m.media-amazon.com/images/I/41cgBFdKbfL._SY445_SX342_QL70_FMwebp_.jpg"} name={"laptop"} price={2000} stock={10} handler={addToCartHandler}/>
+    <ProductCard productId={"632874"} photo={"https://m.media-amazon.com/images/I/41cgBFdKbfL._SY445_SX342_QL70_FMwebp_.jpg"} name={"Apple Macbook Pro"} price={82000} stock={10} handler={addToCartHandler}/>
 
 
     </div>

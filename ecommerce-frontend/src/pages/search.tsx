@@ -8,7 +8,8 @@ const Search = () => {
   const [maxPrice , setMaxPrice] = useState(100000)
   const [page , setPage] = useState(1)
   const [category , setCategory] = useState("")
-
+  const isPrevPage  = page > 1;
+  const isNextPage = page < 4;
 
   const addToCartHandler = ()=>{
 
@@ -23,7 +24,7 @@ const Search = () => {
       
       <div>
         <h4>
-          sort
+          Sort
         </h4>
         <select value={sort} onChange={(e)=>setSort(e.target.value)}>
           <option value="">None</option>
@@ -56,11 +57,12 @@ const Search = () => {
         </h1>
         <input type="text" placeholder="Search By Name.." value={search} onChange={(e)=>setSearch(e.target.value)} />
         <div className="search-product-list">
-        <ProductCard productId={"632874"} photo={"https://m.media-amazon.com/images/I/41cgBFdKbfL._SY445_SX342_QL70_FMwebp_.jpg"} name={"laptop"} price={2000} stock={10} handler={addToCartHandler}/>
+        <ProductCard productId={"632874"} photo={"https://m.media-amazon.com/images/I/41cgBFdKbfL._SY445_SX342_QL70_FMwebp_.jpg"} name={"Apple Macbook Pro"} price={82000} stock={10} handler={addToCartHandler}/>
         </div>
-        <article onClick={()=>setPage((prev)=>prev - 1)}><button>prev</button> 
+        <article >
+          <button disabled={!isPrevPage} onClick={()=>setPage((prev)=>prev - 1)}>prev</button> 
         <span>{page} of {4}</span>
-        <button>next</button>
+        <button disabled={!isNextPage} onClick={()=>setPage((prev)=>prev + 1)}>next</button>
         </article>
 
       </main>

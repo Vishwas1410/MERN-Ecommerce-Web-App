@@ -50,6 +50,27 @@
     user-select: none
    }
 
+   .heading{
+    @include heading;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+
+   .container{
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    >h1{
+      @include heading;
+      margin: 0.5rem 0;
+      text-align: left;
+      font-size: medium;
+      font-weight: 400;
+    }
+   }
+
   .header{
     padding: 1rem;
     @include flex(row, flex-end,stretch , 1.2rem);
@@ -79,7 +100,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 20px;
-      width: 10px;
+      width: 85px;
       position: absolute;
       left: calc(100% - 100px);
       top: 8%;
@@ -96,8 +117,8 @@
 
 
   .product-card{
-    width: 18.5rem;
-    height: 25rem;
+    width: 16.5rem;
+    height: 18.5rem;
     padding: 1rem;
     flex:none;
     @include flex(column,flex-start,center,4px);
@@ -107,10 +128,11 @@
         opacity: 1;
     }
     img{
-        @include square(calc(18.75rem - 3rem));
+        @include square(calc(18.75rem - 9rem));
         object-fit: cover;
         margin: 1rem;
     }
+    
     span{
         font-weight: 700;
         font-size: 1.1rem;
@@ -174,11 +196,7 @@
 
 
 
-.heading{
-  @include heading;
-  margin: 1rem 0;
-  text-align: center;
-}
+
 
   
   .admin-container {
