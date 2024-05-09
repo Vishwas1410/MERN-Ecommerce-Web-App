@@ -15,7 +15,7 @@ export const adminOnly = TryCatch(async (req,res,next) => {
         return next(new errorHandler("Invalid ID",401))
      }
      if(user.role !== "admin"){
-        return next(new errorHandler("Unauthorized",401))
+        return next(new errorHandler("Unauthorized",403))
      }
      next()
 
