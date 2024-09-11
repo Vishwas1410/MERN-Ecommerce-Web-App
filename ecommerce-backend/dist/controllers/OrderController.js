@@ -32,7 +32,7 @@ export const deleteOrder = TryCatch(async (req, res, next) => {
     const order = await OrderModel.findById(id);
     if (!order)
         return next(new errorHandler("Order Not Found", 404));
-    await OrderModel.deleteOne();
+    await order.deleteOne();
     invalidateCache({
         product: false,
         order: true,
@@ -73,7 +73,7 @@ export const newOrder = TryCatch(async (req, res, next) => {
         shippingCharges,
     });
     await reduceStock(orderItems);
-    await invalidateCache({
+    invalidateCache({
         product: true,
         order: true,
         admin: true,

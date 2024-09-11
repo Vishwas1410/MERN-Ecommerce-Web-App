@@ -21,17 +21,20 @@
   },
   "homepage": "https://github.com/Vishwas1410/MERN-Ecommerce-Web-App#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.3.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "node-cache": "^5.1.2",
+    "stripe": "^15.6.0",
     "uuid": "^9.0.1",
     "validator": "^13.11.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.11",

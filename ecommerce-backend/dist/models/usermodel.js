@@ -3,11 +3,11 @@ import validator from "validator";
 const schema = new mongoose.Schema({
     _id: {
         type: String,
-        required: [true, "Please Enter ID"]
+        required: [true, "Please Enter ID"],
     },
     name: {
         type: String,
-        required: [true, "Please Enter Name"]
+        required: [true, "Please Enter Name"],
     },
     email: {
         type: String,
@@ -17,30 +17,31 @@ const schema = new mongoose.Schema({
     },
     photo: {
         type: String,
-        required: [true, "Please add Photo"]
+        required: [true, "Please add Photo"],
     },
     role: {
         default: "user",
         type: String,
-        enum: ["admin", "user"]
+        enum: ["admin", "user"],
     },
     gender: {
         required: [true, "Please Enter Your Gender"],
         type: String,
-        enum: ["female", "male"]
+        enum: ["female", "male"],
     },
     dob: {
         required: [true, "Please Enter Your Date of birth"],
         type: Date,
     },
 }, {
-    timestamps: true
+    timestamps: true,
 });
 schema.virtual("age").get(function () {
     const today = new Date();
     const dob = this.dob;
     let age = today.getFullYear() - dob.getFullYear();
-    if (today.getMonth() < dob.getMonth() || today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate()) {
+    if (today.getMonth() < dob.getMonth() ||
+        (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
         age--;
     }
     return age;

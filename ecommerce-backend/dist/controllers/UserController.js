@@ -45,7 +45,7 @@ export const deleteUser = TryCatch(async (req, res, next) => {
     if (!user) {
         return next(new errorHandler("Invalid Id", 400));
     }
-    await UserModel.deleteOne();
+    await user.deleteOne();
     return res
         .status(200)
         .json({ success: true, message: "User Deleted Successfully" });
