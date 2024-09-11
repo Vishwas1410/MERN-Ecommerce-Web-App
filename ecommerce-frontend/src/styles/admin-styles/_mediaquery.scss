@@ -1,6 +1,7 @@
 @media screen and (width<= 1200px) {
   .admin-container {
     overflow: auto;
+
   }
 
   .dashboard {
@@ -27,6 +28,7 @@
 @media screen and (width<= 1100px) {
   .admin-container {
     grid-template-columns: 1fr !important;
+    size: unset;
   }
 }
 

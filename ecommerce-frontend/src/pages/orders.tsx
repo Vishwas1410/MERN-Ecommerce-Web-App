@@ -2,6 +2,11 @@ import { ReactElement, useState } from "react";
 import TableHOC from "../components/admin/TableHOC"
 import { Column } from "react-table";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { userReducerInitialState } from "../types/reducer-types";
+import { useAllOrdersQuery } from "../redux/api/orderAPI";
+import toast from "react-hot-toast";
+import { customError } from "../types/api-types";
   type DataType = {
     _id: string;
     quantity: number;
@@ -33,6 +38,19 @@ import { Link } from "react-router-dom";
     accessor: 'action'
   },]
 const Orders = () => {
+
+  const { user } = useSelector(
+    (state:{userReducer:userReducerInitialState}) =>state.userReducer
+  );
+
+  
+  const { isError, error, isLoading, data } = useAllOrdersQuery(user?._id!);
+
+
+  if(isError){
+    const err = error as customError;
+    return toast.error(err.data.message);
+  }
 
 
         const [rows ] = useState<DataType[]>([{
