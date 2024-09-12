@@ -12,6 +12,7 @@ import { getUser } from "./redux/api/userAPI";
 import { userReducerInitialState } from "./types/reducer-types";
 import ProtectedRoute from "./components/protected-route";
 const Home = lazy(() => import("./pages/home"));
+const CameraCanvas = lazy(() => import("./components/camera-canvas"));
 const Shipping = lazy(() => import("./pages/shipping"));
 const Search = lazy(() => import("./pages/search"));
 const Cart = lazy(() => import("./pages/cart"));
@@ -70,6 +71,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/viewProd" element={<CameraCanvas />} />
+
           {/** not logged in route */}
           <Route
             path="/login"
